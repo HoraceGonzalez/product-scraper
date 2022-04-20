@@ -5,7 +5,7 @@
 - `docker-compose up`
 - The service will start on localhost:8080. (It could take a few mins to cold-start)
 
-## Usesage 
+## Usage 
 
 Here are some sample `curl` commands to upload data to the service
 

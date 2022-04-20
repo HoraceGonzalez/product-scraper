@@ -25,7 +25,7 @@ module CompositionRoot =
             (RetailerB.Etl.etlWorkflow dbConnectionFactory)
 
     let apiRoutes =
-        let usesage = 
+        let usage = 
             """
             <h2>Try using <strong>curl</strong> to upload a file</h2>
 
@@ -37,7 +37,7 @@ module CompositionRoot =
         choose [
             GET >=> path "/product" >=> RouteHandlers.json NOT_FOUND (Error "Would've implemented some endpoints to query the product data, here.")  
             POST >=> path "/upload" >=> handleFileUpload 
-            OK usesage >=> Writers.setHeader "content-type" "text/html"
+            OK usage >=> Writers.setHeader "content-type" "text/html"
         ]
 
 [<EntryPoint>]

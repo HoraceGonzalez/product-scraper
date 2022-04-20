@@ -35,8 +35,8 @@ module CompositionRoot =
             <ul>
             """
         choose [
-            GET >=> path "product" >=> RouteHandlers.json NOT_FOUND (Error "Would've implemented some endpoints to query the product data, here.")  
-            POST >=> path "upload" >=> handleFileUpload 
+            GET >=> path "/product" >=> RouteHandlers.json NOT_FOUND (Error "Would've implemented some endpoints to query the product data, here.")  
+            POST >=> path "/upload" >=> handleFileUpload 
             OK usesage >=> Writers.setHeader "content-type" "text/html"
         ]
 

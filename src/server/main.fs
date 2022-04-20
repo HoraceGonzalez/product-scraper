@@ -24,16 +24,17 @@ module CompositionRoot =
             (RetailerA.Etl.etlWorkflow dbConnectionFactory)
             (RetailerB.Etl.etlWorkflow dbConnectionFactory)
 
-    let apiRoutes =
-        let usage = 
-            """
-            <h2>Try using <strong>curl</strong> to upload a file</h2>
+    let usage = 
+        """
+        <h2>Try using <strong>curl</strong> to upload a file</h2>
 
-            <ul>
-                <li><code>curl -F 'file=@sampleData/retailer A.json;type=application/x.retailerA+json' localhost:8080/upload</code></li>
-                <li><code>curl -F 'file=@sampleData/retailer B.csv;type=application/x.retailerB+csv' localhost:8080/upload</code></li>
-            <ul>
-            """
+        <ul>
+            <li><code>curl -F 'file=@sampleData/retailer A.json;type=application/x.retailerA+json' localhost:8080/upload</code></li>
+            <li><code>curl -F 'file=@sampleData/retailer B.csv;type=text/x.retailerB+csv' localhost:8080/upload</code></li>
+        <ul>
+        """
+
+    let apiRoutes =
         choose [
             GET >=> path "/product" >=> RouteHandlers.json NOT_FOUND (Error "Would've implemented some endpoints to query the product data, here.")  
             POST >=> path "/upload" >=> handleFileUpload 

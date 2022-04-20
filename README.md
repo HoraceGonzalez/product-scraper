@@ -3,7 +3,11 @@
 - install docker/docker-compose
 - clone this repository
 - `docker-compose up`
-- The service will start on localhost:8080. (It could take a few mins to cold-start)
+- The service will start on localhost:8080. You'll see the message below on the command prompt. (It could take a few mins to cold-start)
+
+```bash
+Smooth! Suave listener started in 28.371ms with binding 0.0.0.0:8080
+```
 
 ## Usage 
 

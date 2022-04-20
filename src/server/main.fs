@@ -1,5 +1,6 @@
 ﻿open System
 
+// The composition root is where all the dependencies are assempled. 
 module CompositionRoot =
     open System
     open System.Threading
@@ -11,6 +12,7 @@ module CompositionRoot =
     open Suave.Operators
     open Suave.Web
 
+    // opens a new mysql connection
     let dbConnectionFactory() =
         Sql.openConnection(
             "sql",
@@ -19,11 +21,14 @@ module CompositionRoot =
             "password",
             3306
         )
+
+    // This should probably push each upload onto a queue for async processing, but we're doing it all synchronously for now
     let handleFileUpload =
         RouteHandlers.handleFileUpload
             (RetailerA.Etl.etlWorkflow dbConnectionFactory)
             (RetailerB.Etl.etlWorkflow dbConnectionFactory)
 
+    // a usage message explaining how to make HTTP requests to the service
     let usage = 
         """
         <h2>Try using <strong>curl</strong> to upload a file</h2>
@@ -34,13 +39,16 @@ module CompositionRoot =
         <ul>
         """
 
+    // The http route tree
     let apiRoutes =
         choose [
             GET >=> path "/product" >=> RouteHandlers.json NOT_FOUND (Error "Would've implemented some endpoints to query the product data, here.")  
             POST >=> path "/upload" >=> handleFileUpload 
+            // otherwise just print the usage
             OK usage >=> Writers.setHeader "content-type" "text/html"
         ]
 
+// This is the entrypoint of the program. It runs any sql migrations and starts the api web server
 [<EntryPoint>]
 let main args = 
     async {

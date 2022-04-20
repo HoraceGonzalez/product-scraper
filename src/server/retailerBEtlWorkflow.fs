@@ -85,6 +85,10 @@ let insertProductAttributes now productId (p:Dtos.ProductCsv.Row) conn =
                 ]
     }
 
+// The etl workflow for ingeseting a file from retailer B
+// one thing we could do here i suse Walmart's API to enrich the product data, find UPCs, prices, another info
+// We'd also extract the sku from the url. It's usually there. It's also possible to scrape the ld+json data on the product page itself
+// This semantic data usually contains more pricing info and UPCs.
 let etlWorkflow (connectToDb:unit -> IDbConnection) (file:Stream) = 
     async {
         let now = DateTime.UtcNow

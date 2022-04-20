@@ -89,6 +89,9 @@ let insertProductAttributes now productId (p:Dtos.Product) conn =
                 ]
     }
 
+// The etl workflow for ingeseting a file from retailer A
+// one thing we could do here is use Amazon's Product Advertising API (PAAPI) to enrich the product data, find UPCs, prices, another info
+// We'd also extract the asin from the url add the asin as another sku
 let etlWorkflow (connectToDb:unit -> IDbConnection) (file:Stream) = 
     async {
         let now = DateTime.UtcNow

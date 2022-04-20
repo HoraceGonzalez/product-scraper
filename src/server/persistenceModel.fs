@@ -231,6 +231,7 @@ let findProductByExternalId (idType:string, idValue:string, retailer:string) (co
     }
 
 // jerry-rigged sql migrations library
+// in contains the sql table schema definitions. I'll explain my decisionmaking around these in person
 module Migrations = 
     let initializeMigrationsTable conn = 
         conn

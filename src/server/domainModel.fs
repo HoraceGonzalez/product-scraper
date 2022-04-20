@@ -1,5 +1,9 @@
 module Domain
 
+// ideally this is how I'd model a "product" in purse domain logic. 
+// It's pretty slean, but I tried to incorporate at least the data in the sample files 
+// Note: this domain model is just for reference; it isn't used anywhere in the project. I ran out of time, but the idea was to 
+// rehydrate from the entity-attribute-value representation of the product data stored in the database.
 type Product = {
     name : string
     description : string option

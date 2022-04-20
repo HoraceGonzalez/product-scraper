@@ -13,14 +13,17 @@ open Suave.Web
 
 open Newtonsoft.Json
 
+// a DTO to represent the response shape
 type ResponseEnvelope<'body> = {
     success : bool
     body : 'body option 
     error : string option
 }
 
+// a json serialization function
 let serialize o = JsonConvert.SerializeObject(o, Formatting.Indented, Json.settings)
 
+// convert a Result type to a json response envelope
 let toResponseEnvelope (res:Result<_,_>) = 
     match res with
     | Ok body -> 
@@ -36,6 +39,7 @@ let toResponseEnvelope (res:Result<_,_>) =
             error = Some (err.ToString())
         }
 
+// a web helper that serializes the response envelope and sets the content type to application/json
 let json responseStatusCode res = 
     let json =
         res
@@ -44,6 +48,7 @@ let json responseStatusCode res =
     responseStatusCode json
     >=> Writers.setHeader "Content-Type" "application/json"
 
+// a wrapper around file processing that catches and handles any exceptions.
 let processFile etlWorkflow (file:Stream) =
     async {
         try
@@ -61,6 +66,11 @@ let handleFileUpload retailerAWorkflow retailerBWorkflow = request (fun req ctx 
             req.files
             |> Seq.tryHead
 
+        // look for a file in the HTTP request and key off the mime type.
+        // the two recognized mimetypes are:
+        // - application/x.retailerA+json 
+        // - text/x.retailerA+csv
+        // I named these so it'd be clear that they have a particular format -- not just plain csv/json
         match file with
         | Some file when file.mimeType = "application/x.retailerA+json" ->
             use file = File.OpenRead file.tempFilePath

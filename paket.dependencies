@@ -10,3 +10,4 @@ nuget FSharp.Data
 nuget Dapper
 nuget Dapper.FSharp
 nuget MySqlConnector
+nuget Suave

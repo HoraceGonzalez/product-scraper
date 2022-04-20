@@ -1,5 +1,7 @@
 module SqlPersistenceModel
 
+open System
+
 // Some DTOs to represent sql database records
 module Dtos =
     type UnixTimestamp = int64

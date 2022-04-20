@@ -14,3 +14,5 @@ NUGET
       Newtonsoft.Json (>= 10.0.3)
     MySqlConnector (2.1.8)
     Newtonsoft.Json (13.0.1)
+    Suave (2.6.2)
+      FSharp.Core

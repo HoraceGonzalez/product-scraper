@@ -3,10 +3,9 @@ services:
   sql:
     image: "mariadb:10.3"
     restart: 'always'
-    volumes:
-      - ./data:/var/lib/mysql/
-      - ./logs:/var/log/mysql/
-      - ./snapshots:/var/mysql/snapshots/
+    # volumes:
+    #   - ./data:/var/lib/mysql/
+    #   - ./logs:/var/log/mysql/
     ports:
       - "3306:3306"
     environment:
@@ -14,13 +13,14 @@ services:
       MYSQL_DATABASE: products
       MYSQL_USER: user 
       MYSQL_PASSWORD: password 
-  # web:
-  #   container_name: web 
-  #   build: .
-  #   ports:
-  #     - "8080:8080"
-  #     - "8085:8085"
-  #   volumes:
-  #     - .:/usr/src/app
-  #   stdin_open: true
-  #   tty: true
+  server:
+    container_name: server 
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - "sql"
+    stdin_open: true
+    tty: true

@@ -1,0 +1,6 @@
+{
+    "FSharp.fsacRuntime":"netcore",
+    "FSharp.fsiExtraParameters": [
+        "/langversion:preview"
+    ]
+}

@@ -7,8 +7,15 @@
   <ItemGroup>
     <Compile Include="helpers.fs" />
     <Compile Include="sql.fs" />
+    <Compile Include="helpers.fs" />
+    <Compile Include="sql.fs" />
     <Compile Include="domainModel.fs" />
     <Compile Include="persistenceModel.fs" />
+    <Compile Include="etl.fs" />
+    <Compile Include="retailerAEtlWorkflow.fs" />
+    <Compile Include="retailerBEtlWorkflow.fs" />
+    <Compile Include="apiRouteHandlers.fs" />
+    <Compile Include="apiServer.fs" />
     <Compile Include="main.fs" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />

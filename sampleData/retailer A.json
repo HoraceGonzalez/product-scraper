@@ -1,0 +1,68 @@
+[
+	{
+		"sku": "SKU123",
+		"url": "https://www.amazon.com/Pokemon-Legends-Arceus-Nintendo-Switch/dp/B0914YGQSH",
+		"description": "Pokemon Arceus",
+		"price": 100,
+		"currency": "USD",
+		"name": "Pokemon Legends Arceus",
+		"platform": "nintendo switch",
+		"category": "video games",
+		"last_updated": "2022-01-10"
+	},
+	{
+		"sku": "SKU456",
+		"url": "https://www.amazon.com/LEGO-Star-Wars-Skywalker-Nintendo-Switch/dp/B07SH3DBLW",
+		"description": "lego",
+		"price": 123,
+		"currency": "USD",
+		"name": "Lego Starwars",
+		"platform": "nintendo switch",
+		"category": "video games",
+		"last_updated": "2022-01-10"
+	},
+	{
+		"sku": "ABC123",
+		"url": "https://www.amazon.com/Super-Smash-Bros-Ultimate-Nintendo-Switch/dp/B01N5OKGLH",
+		"description": "ultimate",
+		"price": 100,
+		"currency": "USD",
+		"name": "Super Smash Bros",
+		"platform": "nintendo switch",
+		"category": "video games",
+		"last_updated": "2022-01-10"
+	},
+	{
+		"sku": "XYZ19384",
+		"url": "https://www.amazon.com/Apex-Legends-Champion-Nintendo-Switch/dp/B08T493RJY",
+		"description": "champion edition",
+		"price": 1000,
+		"currency": "USD",
+		"name": "Apex",
+		"platform": "nintendo switch",
+		"category": "video games",
+		"last_updated": "2022-01-10"
+	},
+	{
+		"sku": "JKL9K1",
+		"url": "https://www.amazon.com/Apex-Legends-Bloodhound-PlayStation-4/dp/B07XKW623C",
+		"description": "bloodhoud",
+		"price": 100,
+		"currency": "USD",
+		"name": "Apex",
+		"platform": "ps4",
+		"category": "video games",
+		"last_updated": "2022-01-10"
+	},
+	{
+		"sku": "JKL9K1",
+		"url": "https://www.amazon.com/Apex-Legends-Bloodhound-PlayStation-4/dp/B07XKW623C",
+		"description": "bloodhoud",
+		"price": 50,
+		"currency": "USD",
+		"name": "Apex",
+		"platform": "ps4",
+		"category": "video games",
+		"last_updated": "2022-01-11"
+	}
+]

@@ -8,7 +8,14 @@ module Operators =
 module DateTimeExts = 
     module DateTime =
         open System
-        let private epoch = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
-        let toJs(d:DateTime) = (d.Ticks - epoch.Ticks) / 10000L
-        let toUnixTs(d:DateTime) = (d - epoch).TotalSeconds |> int64
-        let fromUnixTs(ts:uint64) = epoch.AddSeconds(float ts)
+        let toUnixTs(d:DateTime) = (d - DateTime.UnixEpoch).TotalSeconds |> int64
+        let fromUnixTs(ts:uint64) = DateTime.UnixEpoch.AddSeconds(float ts)
+
+module Json =
+    open Newtonsoft.Json
+    open Microsoft.FSharpLu.Json
+    let settings = JsonSerializerSettings(
+        Converters = [| CompactUnionJsonConverter() |],
+        DateParseHandling= DateParseHandling.DateTime
+    )
+    let serializer = JsonSerializer.Create(settings)

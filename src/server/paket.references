@@ -5,3 +5,4 @@ FSharp.Data
 Dapper
 Dapper.FSharp
 MySqlConnector
+Suave

@@ -1,0 +1,16 @@
+STORAGE: NONE
+RESTRICTION: == net6.0
+NUGET
+  remote: https://api.nuget.org/v3/index.json
+    Dapper (2.0.123)
+    Dapper.FSharp (3.2)
+      Dapper (>= 2.0.123)
+      FSharp.Core (>= 6.0.1)
+    FSharp.Core (6.0.3)
+    FSharp.Data (4.2.8)
+      FSharp.Core (>= 4.7.2)
+    Microsoft.FSharpLu.Json (0.11.7)
+      FSharp.Core (>= 4.5.4)
+      Newtonsoft.Json (>= 10.0.3)
+    MySqlConnector (2.1.8)
+    Newtonsoft.Json (13.0.1)

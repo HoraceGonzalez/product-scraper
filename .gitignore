@@ -1,0 +1,11 @@
+.paket/load
+paket-files
+.ionide
+packages
+*.env
+
+**/bin
+**/obj
+
+working
+

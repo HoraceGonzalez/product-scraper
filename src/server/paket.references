@@ -1,0 +1,7 @@
+Newtonsoft.Json
+Microsoft.FSharpLu.Json
+FSharp.Core
+FSharp.Data
+Dapper
+Dapper.FSharp
+MySqlConnector

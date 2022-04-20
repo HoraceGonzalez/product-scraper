@@ -1,0 +1,12 @@
+framework: net6.0
+storage: none
+
+source https://api.nuget.org/v3/index.json
+
+nuget Newtonsoft.Json
+nuget Microsoft.FSharpLu.Json
+nuget FSharp.Core
+nuget FSharp.Data
+nuget Dapper
+nuget Dapper.FSharp
+nuget MySqlConnector

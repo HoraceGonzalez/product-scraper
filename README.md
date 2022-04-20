@@ -10,5 +10,5 @@
 Here are some sample `curl` commands to upload data to the service
 
 ```curl -F 'file=@sampleData/retailer A.json;type=application/x.retailerA+json' localhost:8080/upload```
-```curl -F 'file=@sampleData/retailer B.csv;type=application/x.retailerB+csv' localhost:8081/upload```
+```curl -F 'file=@sampleData/retailer B.csv;type=text/x.retailerB+csv' localhost:8080/upload```
 
